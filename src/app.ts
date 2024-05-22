@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import { ProductRoutes } from "./app/modules/product/productRoutes";
+import { ProductRoutes } from "./app/modules/products/productRoutes";
 
 // configures dotenv to work in your application
 dotenv.config();
