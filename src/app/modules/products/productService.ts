@@ -9,6 +9,10 @@ const getAllProducts = async (): Promise<IProduct[]> => {
   return Product.find();
 };
 
+const getProductOnSearch = async (search: string): Promise<IProduct[]> => {
+  return Product.find({ name: { $regex: search, $options: "i" } });
+};
+
 const getProductById = async (id: string): Promise<IProduct | null> => {
   return Product.findById(id);
 };
@@ -47,6 +51,7 @@ export const updateProductStock = async (
 export const ProductService = {
   createProduct,
   getAllProducts,
+  getProductOnSearch,
   getProductById,
   updateProduct,
   deleteProduct,

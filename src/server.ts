@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
 import app from "./app";
 import { Server } from "http";
+import config from "./app/config";
 
 const PORT = process.env.PORT;
 let server: Server;
 
 async function main() {
-  await mongoose.connect(process.env.DB_URI as string);
+  await mongoose.connect(config.database_url as string);
 
   server = app
     .listen(PORT, () => {
