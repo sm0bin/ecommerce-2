@@ -6,3 +6,5 @@ const orderValidationSchema = z.object({
   price: z.number().positive(),
   quantity: z.number().int().positive(),
 });
+
+export default orderValidationSchema;
